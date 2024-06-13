@@ -21,10 +21,12 @@ export class AppGateway
 {
   @WebSocketServer() server: Server;
   private logger: Logger = new Logger('AppGateway');
+  private messages: { message: string, clientId: string }[] = [];
 
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, payload: string): void {
     console.log('msgToServer', payload);
+    this.messages.push({ message: payload, clientId: client.id });
     this.server.emit('msgToClient', payload, client.id);
   }
 
@@ -34,6 +36,12 @@ export class AppGateway
 
   handleConnection(client: Socket) {
     this.logger.log(`Client connected: ${client.id}`);
+
+    this.messages.forEach(msg => {
+      client.emit('msgToClient', msg.message, msg.clientId);
+    });
+    const welcomeMessage = 'Bem-vindo';
+    client.emit('msgToClient', welcomeMessage, 'server');
   }
 
   handleDisconnect(client: Socket) {

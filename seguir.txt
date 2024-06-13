@@ -4,5 +4,5 @@
 4- nest g gateway app /no cmd
 5- apagar tudo menos a module e a app.gateway.ts 
 6- salvar em memoria as mensagens enviadas 
-7- Emitir uma menssagem previa para todos os novos clientes
-8- Renderizar a menssagem na tela
+7- Emitir uma mensagem previa para todos os novos clientes
+8- Renderizar a mensagem na tela
