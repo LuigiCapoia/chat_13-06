@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   socket.on('msgToClient', (message, clientId) => {
-    console.log(`Mensagem recebida: ${message} do cliente ${clientId}`);
+    console.log(`Mensagem: ${message} cliente ${clientId}`);
     const messages = document.getElementById('messages');
     const messageElement = document.createElement('li');
     messageElement.textContent = `Cliente ${clientId}: ${message}`;
