@@ -1,0 +1,8 @@
+1- criar pasta public para escrever o front end
+2- fazer html
+3-instalar dependencias do socket io / npm i socket.io @types/socket.io / npm i --save @nestjs/websockets @nestjs/platform-socket.io
+4- nest g gateway app /no cmd
+5- apagar tudo menos a module e a app.gateway.ts 
+6- salvar em memoria as mensagens enviadas 
+7- Emitir uma menssagem previa para todos os novos clientes
+8- Renderizar a menssagem na tela
