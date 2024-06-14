@@ -6,3 +6,14 @@
 6- salvar em memoria as mensagens enviadas 
 7- Emitir uma mensagem previa para todos os novos clientes
 8- Renderizar a mensagem na tela
+9- criar uma entidade de menssagem{
+    id
+    content
+    username
+    clientid
+    createAt
+    updateAt
+}
+10- timestamp true
+11- confgurar o mongosee
+12 - trocar a implementação em memoria pela chamda do banco de dados
